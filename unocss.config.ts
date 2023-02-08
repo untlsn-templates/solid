@@ -10,6 +10,7 @@ import {
   transformerCompileClass,
 } from 'unocss';
 import { theme } from './tailwind.config.cjs';
+import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders';
 
 const createVariantSelector = (select: string, cb: (state: string, s: string) => string): Variant => (
   (matcher) => {
@@ -41,8 +42,8 @@ const config = defineConfig({
   // WebStorm don't support unocss config, so theme put in tailwind.config.cjs
   theme: theme.extend,
   rules: [
-    ['content-fill', { content: '"&nbsp"' }],
-    ['c_', { content: '"&nbsp"' }],
+    ['content-fill', { content: '"\xa0"' }],
+    ['c_', { content: '"\xa0"' }],
     [/^((min|max)-)?size-(\d+)(.+)?$/, ([matcher]) => {
       const [type, sizePart] = matcher.split('size-');
       const sizeNum = Number(sizePart);
@@ -122,6 +123,11 @@ const config = defineConfig({
         'white-space': 'nowrap',
       },
       cdn: 'https://esm.sh/',
+      collections: {
+        my: FileSystemIconLoader(
+          './src/assets/icons',
+        ),
+      },
     }),
   ],
   transformers: [
