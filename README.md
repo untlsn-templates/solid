@@ -1,5 +1,7 @@
 # My template build on top of [SolidStart](https://github.com/solidjs/solid-start)
-![SolidStart template](./public/favicon.svg)
+<p align="center">
+  <img style="height: 16rem" src="./public/favicon.svg" alt="SolidStart template">
+</p> 
 
 ## Added features:
 ### In code
