@@ -28,12 +28,16 @@ rules:
   object-curly-spacing: [1, always]
   object-curly-newline: [1, { multiline: true, consistent: true }]
   no-trailing-spaces: 1
-  no-console: 1
+  no-console: [1, { allow: [warn, error] }]
   quotes: [1, single]
   jsx-quotes: 1
+  key-spacing:
+    - 1
+    - align: value
 
   '@typescript-eslint/no-unused-vars': 1
   '@typescript-eslint/consistent-type-imports': 1
+  '@typescript-eslint/no-explicit-any': 0
 
   react/jsx-max-props-per-line: [1, { maximum: 1, when: multiline }]
   react/jsx-closing-bracket-location: 1

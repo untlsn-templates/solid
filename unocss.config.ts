@@ -22,12 +22,13 @@ const createVariantSelector = (select: string, cb: (state: string, s: string) =>
 
     return {
       selector: (s) => cb(state, s),
-      matcher: rest.join(':'),
+      matcher:  rest.join(':'),
     };
   }
 );
 
-const createSimpleVarianl = (select: string, selector: (s: string) => string): Variant => (
+
+const createSimpleVariant = (select: string, selector: (s: string) => string): Variant => (
   (matcher) => {
     if (!matcher.startsWith(select)) return matcher;
 
@@ -42,8 +43,17 @@ const config = defineConfig({
   // WebStorm don't support unocss config, so theme put in tailwind.config.cjs
   theme: theme.extend,
   rules: [
-    ['content-fill', { content: '"\xa0"' }],
+    // It's put non-breaking space as content. Useful for icons as pseudo-elements
     ['c_', { content: '"\xa0"' }],
+    // Allow to create Y/X grid placeing like place-items-[center-stretch] (center vertically but stretch horizontaly)
+    [/^place-(items|self)-\[\w+]$/, ([matcher]) => {
+      const [selector, value] = matcher.split('-[');
+
+      return {
+        [selector]: value.replace(/_/g, ' ').slice(0, -1),
+      };
+    }],
+    // Shorthand of h-$X w-$X (size-$X)
     [/^((min|max)-)?size-(\d+)(.+)?$/, ([matcher]) => {
       const [type, sizePart] = matcher.split('size-');
       const sizeNum = Number(sizePart);
@@ -61,16 +71,16 @@ const config = defineConfig({
     }],
   ],
   variants: [
+    // Allow to select deep childrens of type like: deep-of-input select all inputs inside
     createVariantSelector('deep-of-',  (state, s) => `${s} ${state}`),
+    // Allow to select direct childrens of type like: of-input select all shallow inputs inside
     createVariantSelector('of-',  (state, s) => `${s}>${state}`),
-    createVariantSelector('group-ui-',  (state, s) => `.group[data-headlessui-state*="${state}"] ${s}`),
-    createVariantSelector('ui-',  (state, s) => `${s}[data-headlessui-state*="${state}"]`),
-    createVariantSelector('noui-',  (state, s) => `${s}:not([data-headlessui-state*="${state}"])`),
+    // Shorthand of hover and focus. Many time hover and focus effect are the same
+    createSimpleVariant('hocus:', (s) => `${s}:hover, ${s}:focus`),
+    // Select all children of element
+    createSimpleVariant('deep-children:', (s) => `${s} *`),
 
-    createSimpleVarianl('hocus:', (s) => `${s}:hover, ${s}:focus`),
-    createSimpleVarianl('deep-children:', (s) => `${s} *`),
-
-    // Match data and aria values
+    // Match data and aria values. Like data-selected select elements where data-selected exist
     (matcher) => {
       if (!['aria-', 'data-'].some((v) => matcher.startsWith(v))) return matcher;
 
@@ -83,19 +93,20 @@ const config = defineConfig({
 
       return {
         selector: (s) => `${s}[${selector}="${value}"]`,
-        matcher: rest.join(':'),
+        matcher:  rest.join(':'),
       };
     },
+    // Desktop first version of media selector. Like max-md work on screen smaller then 768px
     (matcher) => {
       if (!matcher.startsWith('max-')) return matcher;
 
       const [variant, ...rest] = matcher.split(':');
 
       const mediaPx = {
-        sm: 640,
-        md: 768,
-        lg: 1024,
-        xl: 1280,
+        sm:    640,
+        md:    768,
+        lg:    1024,
+        xl:    1280,
         '2xl': 1536,
       }[variant.replace('max-', '')];
 
@@ -103,7 +114,7 @@ const config = defineConfig({
 
       return {
         matcher: rest.join(':'),
-        parent: `@media (max-width: ${mediaPx}px)`,
+        parent:  `@media (max-width: ${mediaPx}px)`,
       };
     },
   ],
@@ -117,13 +128,14 @@ const config = defineConfig({
     }),
     presetIcons({
       extraProperties: {
-        display: 'inline-block',
-        height: 'auto',
-        'min-height': '1em',
+        display:       'inline-block',
+        height:        'auto',
+        'min-height':  '1em',
         'white-space': 'nowrap',
       },
-      cdn: 'https://esm.sh/',
+      cdn:         'https://esm.sh/',
       collections: {
+        // All icons placed inside src/assets/icons will be listed as i-my-${file-name}
         my: FileSystemIconLoader(
           './src/assets/icons',
         ),

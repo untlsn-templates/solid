@@ -1,3 +1,5 @@
+import type { z } from 'zod';
+
 declare global {
   // Generate solid-js/like event
   type GenEv<TEv extends Event=Event, TElement extends HTMLElement=HTMLElement> = TEv & { currentTarget: TElement, target: Element }
@@ -16,6 +18,9 @@ declare global {
   type TransitionEv   <T extends HTMLElement=HTMLElement> = GenEv<TransitionEvent,  T>
   type WheelEv        <T extends HTMLElement=HTMLElement> = GenEv<WheelEvent,       T>
   type InputEv        <T extends HTMLElement=HTMLElement> = GenEv<InputEvent,       T>
+
+  type zInput<T extends z.ZodType> = z.input<T>
+  type zOutput<T extends z.ZodType> = z.output<T>
 }
 
 export {};
