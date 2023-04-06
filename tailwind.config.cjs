@@ -10,7 +10,7 @@ module.exports = {
         c: {
           carbon: '#0C0C0D',
         },
-      },
+      }
     },
   },
   plugins: [],
