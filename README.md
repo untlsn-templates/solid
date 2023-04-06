@@ -7,7 +7,7 @@
 ### In code
 - UnoCSS for styling (clsx for concatenation)
 - Zod for validation
-- Prisma as ORM
+- Drizzle ORM - fast and typesafe ORM (default with sqlite)
 ### Tools
 - Unplugin-auto-import for common inports
 - Pnpm as package manager

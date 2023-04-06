@@ -12,6 +12,7 @@ import {
   Title,
   Link,
 } from 'solid-start';
+import '~/assets/style';
 
 export default function Root() {
   return (

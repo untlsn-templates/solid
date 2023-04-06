@@ -22,27 +22,28 @@
     "solid-devtools": "^0.26.0",
     "solid-start-node": "^0.2.26",
     "solid-start-static": "^0.2.26",
+    "tailwindcss": "3.2.7",
     "typescript": "^5.0.3",
     "unocss": "^0.50.6",
     "unplugin-auto-import": "^0.15.2",
     "vite": "^4.2.1",
-    "tailwindcss": "3.2.7"
+    "drizzle-kit": "^0.17.4"
   },
   "dependencies": {
-    "@prisma/client": "^4.12.0",
     "@solidjs/meta": "^0.28.4",
     "@solidjs/router": "^0.8.2",
     "aws-sdk": "^2.1351.0",
     "bcrypt": "^5.1.0",
+    "better-sqlite3": "^8.2.0",
     "clsx": "^1.2.1",
+    "drizzle-orm": "^0.23.8",
     "mock-aws-s3": "^4.0.2",
+    "nanoid": "^4.0.2",
     "nock": "^13.3.0",
-    "prisma": "^4.12.0",
     "solid-js": "^1.7.2",
     "solid-start": "^0.2.26",
     "undici": "^5.21.0",
-    "zod": "^3.21.4",
-    "nanoid": "^4.0.2"
+    "zod": "^3.21.4"
   },
   "engines": {
     "node": ">=16.8"
