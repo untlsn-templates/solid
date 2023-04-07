@@ -2,10 +2,10 @@ import { db, usersTable } from '~/db';
 import { eq } from 'drizzle-orm/expressions';
 import type { RouteDataFuncArgs } from '@solidjs/router';
 import type { InferModel } from 'drizzle-orm';
-import { createRouteData } from 'solid-start';
+import { createServerData$ } from 'solid-start/server';
 
 export const routeData = ({ params }: RouteDataFuncArgs) => (
-	createRouteData(async ([,strId]): Promise<InferModel<typeof usersTable> | undefined> => {
+	createServerData$(async ([,strId]): Promise<InferModel<typeof usersTable> | undefined> => {
 		const id = +strId;
 		if (!id) return undefined;
 		return db.select().from(usersTable).where(eq(usersTable.id, id)).get();
