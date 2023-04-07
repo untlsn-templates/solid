@@ -5,8 +5,8 @@ import { migrate } from 'drizzle-orm/better-sqlite3/migrator';
 
 
 export const usersTable = sqliteTable('users', {
-  id:       integer('id').primaryKey(),
-  fullName: text('full_name'),
+	id:       integer('id').primaryKey(),
+	fullName: text('full_name'),
 });
 
 const sqlite = new Database('sqlite.db');

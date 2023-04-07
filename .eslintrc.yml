@@ -21,7 +21,7 @@ rules:
   prefer-const: 1
   arrow-body-style: [ 1, as-needed ]
   arrow-parens: [1, always]
-  indent: [1, 2, { SwitchCase: 1 }]
+  indent: [1, tab, { SwitchCase: 1 }]
   comma-dangle: [1, always-multiline]
   quote-props: [1, as-needed]
   prefer-destructuring: 1
@@ -41,7 +41,7 @@ rules:
   react/jsx-max-props-per-line: [1, { maximum: 1, when: multiline }]
   react/jsx-closing-bracket-location: 1
   react/jsx-one-expression-per-line: [1, { allow: single-child }]
-  react/jsx-indent: [1, 2]
+  react/jsx-indent: [1, tab]
   react/jsx-first-prop-new-line: 1
   react/button-has-type: [1, { reset: true }]
   react/jsx-tag-spacing: 1
