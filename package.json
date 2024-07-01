@@ -7,25 +7,29 @@
     "start": "vinxi start"
   },
   "dependencies": {
-    "@eslint/js": "^9.4.0",
-    "@solidjs/router": "^0.13.5",
+    "@solidjs/router": "^0.13.6",
     "@solidjs/start": "1.0.1",
-    "@types/eslint__js": "^8.42.3",
-    "@typescript-eslint/eslint-plugin": "^7.12.0",
-    "@typescript-eslint/parser": "^7.12.0",
     "clsx": "^2.1.1",
-    "eslint": "^9.4.0",
-    "eslint-plugin-only-warn": "^1.1.0",
-    "eslint-plugin-react": "^7.34.2",
-    "eslint-plugin-solid": "^0.14.0",
-    "eslint-plugin-sort": "^3.0.2",
-    "solid-js": "^1.8.17",
-    "typescript": "^5.4.5",
-    "typescript-eslint": "^7.12.0",
+    "solid-js": "^1.8.18",
     "unocss": "^0.60.4",
     "untcss-reset": "^1.0.2",
     "untlsn-unocss": "^0.0.7",
-    "vinxi": "^0.3.11"
+    "vinxi": "^0.3.12"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.6.0",
+    "@stylistic/eslint-plugin": "^2.3.0",
+    "@types/eslint__js": "^8.42.3",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.14.1",
+    "@unocss/eslint-config": "^0.61.0",
+    "eslint": "^9.6.0",
+    "eslint-plugin-only-warn": "^1.1.0",
+    "eslint-plugin-react": "^7.34.3",
+    "eslint-plugin-solid": "^0.14.1",
+    "eslint-plugin-sort": "^3.0.2",
+    "typescript-eslint": "^7.14.1",
+    "typescript": "^5.5.2"
   },
   "engines": {
     "node": ">=18"
