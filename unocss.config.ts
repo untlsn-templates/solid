@@ -1,5 +1,5 @@
 import * as u from 'unocss';
-import { presetAio } from 'untlsn-unocss';
+import { presetAio } from '@un-tlsn/unocss';
 
 
 export default u.defineConfig({

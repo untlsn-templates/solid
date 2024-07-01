@@ -1,18 +1,21 @@
 // @refresh reload
 import { Suspense } from 'solid-js';
-import 'untcss-reset';
+import '@un-tlsn/unocss/reset';
 import 'uno.css';
 import { Router } from '@solidjs/router';
 import { FileRoutes } from '@solidjs/start/router';
+import { MetaProvider } from '@solidjs/meta';
 
 
 export default function App() {
 	return (
 		<Router root={(props) => {
 			return (
-				<Suspense>
-					{props.children}
-				</Suspense>
+				<MetaProvider>
+					<Suspense>
+						{props.children}
+					</Suspense>
+				</MetaProvider>
 			);
 		}}
 		>
