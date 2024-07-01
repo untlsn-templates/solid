@@ -10,11 +10,17 @@
     "@solidjs/meta": "^0.29.4",
     "@solidjs/router": "^0.13.6",
     "@solidjs/start": "1.0.2",
+    "@tanstack/solid-query": "^5.49.1",
+    "@tanstack/solid-query-devtools": "^5.49.1",
+    "@trpc/client": "^10.45.2",
+    "@trpc/server": "^10.45.2",
+    "@typeschema/valibot": "^0.13.4",
     "@un-tlsn/solid-form": "^0.2.3",
     "@un-tlsn/unocss": "^0.1.0",
     "clsx": "^2.1.1",
     "solid-js": "^1.8.18",
     "unocss": "^0.61.0",
+    "valibot": "^0.35.0",
     "vinxi": "^0.3.12"
   },
   "devDependencies": {
