@@ -11,6 +11,7 @@
     "@solidjs/router": "^0.13.6",
     "@solidjs/start": "1.0.2",
     "@un-tlsn/solid-form": "^0.2.3",
+    "@un-tlsn/unocss": "^0.1.0",
     "clsx": "^2.1.1",
     "solid-js": "^1.8.18",
     "unocss": "^0.61.0",
