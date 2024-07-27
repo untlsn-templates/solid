@@ -8,29 +8,31 @@
   },
   "dependencies": {
     "@solidjs/meta": "^0.29.4",
-    "@solidjs/router": "^0.13.6",
-    "@solidjs/start": "1.0.2",
-    "@un-tlsn/solid-form": "^0.2.3",
-    "@un-tlsn/unocss": "^0.1.0",
+    "@solidjs/router": "^0.14.1",
+    "@solidjs/start": "1.0.6",
+    "@un-tlsn/eslint": "^0.1.0",
+    "@un-tlsn/solid-form": "^0.4.6",
+    "@un-tlsn/unocss": "^0.1.1",
+    "@un-tlsn/utils": "^0.0.0",
     "clsx": "^2.1.1",
-    "solid-js": "^1.8.18",
-    "unocss": "^0.61.0",
-    "vinxi": "^0.3.12"
+    "solid-js": "^1.8.19",
+    "unocss": "^0.61.6",
+    "vinxi": "^0.4.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.6.0",
+    "@eslint/js": "^9.8.0",
     "@stylistic/eslint-plugin": "^2.3.0",
     "@types/eslint__js": "^8.42.3",
-    "@typescript-eslint/eslint-plugin": "^7.14.1",
-    "@typescript-eslint/parser": "^7.14.1",
-    "@unocss/eslint-config": "^0.61.0",
-    "eslint": "^9.6.0",
+    "@typescript-eslint/eslint-plugin": "^7.17.0",
+    "@typescript-eslint/parser": "^7.17.0",
+    "@unocss/eslint-config": "^0.61.6",
+    "eslint": "^9.8.0",
     "eslint-plugin-only-warn": "^1.1.0",
-    "eslint-plugin-react": "^7.34.3",
+    "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-solid": "^0.14.1",
     "eslint-plugin-sort": "^3.0.2",
-    "typescript-eslint": "^7.14.1",
-    "typescript": "^5.5.2"
+    "typescript-eslint": "^7.17.0",
+    "typescript": "^5.5.4"
   },
   "engines": {
     "node": ">=18"
