@@ -9,7 +9,6 @@ export default u.defineConfig({
 	presets: [
 		u.presetUno(),
 		u.presetWind(),
-		u.presetIcons(),
 		u.presetTypography(),
 		u.presetWebFonts(),
 		presetAio(),
