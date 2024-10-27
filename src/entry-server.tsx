@@ -12,7 +12,7 @@ export default createHandler(() => (
 					<title>Untlsn-Template</title>
           {assets}
         </head>
-        <body>
+        <body class="font-sans">
           <div id="app">{children}</div>
           {scripts}
         </body>
